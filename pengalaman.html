@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengalaman — M. Nabil Rahmadhan</title>
+  <meta name="description" content="Pengalaman pembelajaran kejuruan dan project M. Nabil Rahmadhan di SMK Negeri 1 Kepanjen." />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Pasang tema SEBELUM CSS render supaya tidak kedip-kedip (default: dark)
+    try {
+      var __savedTheme = localStorage.getItem("tema-nabil");
+      document.documentElement.setAttribute("data-theme", __savedTheme === "light" ? "light" : "dark");
+    } catch (e) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGASI ===== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">M. Nabil <span>Rahmadhan</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="pengalaman.html" class="active">Pengalaman</a></li>
+        <li><a href="kemampuan.html">Kemampuan</a></li>
+        <li><a href="pendidikan.html">Pendidikan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== KONTEN DETAIL ===== -->
+  <main class="detail container">
+    <div class="detail-top">
+      <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+      <!-- Toggle Light / Dark (default: Dark). Klik untuk ganti tema. -->
+      <button type="button" class="btn btn-theme" id="themeToggle" aria-label="Ganti mode gelap atau terang">
+        <span class="theme-icon" id="themeIcon" aria-hidden="true">🌙</span>
+        <span class="theme-text" id="themeText">Mode Dark</span>
+      </button>
+    </div>
+
+    <h1 class="detail-title">Pengalaman</h1>
+
+    <div class="detail-card">
+      <h2>Pembelajaran Kejuruan</h2>
+      <p>Selama belajar di SMK Negeri 1 Kepanjen, saya mempelajari:</p>
+      <ul class="list">
+        <li>HTML — dasar pembuatan struktur halaman website</li>
+        <li>PHP — bahasa pemrograman untuk pengembangan website dinamis</li>
+        <li>Laragon — environment untuk menjalankan server lokal dan database</li>
+        <li>CRUD — operasi Create, Read, Update, Delete untuk pengelolaan data</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h2>Project di SMK Negeri 1 Kepanjen</h2>
+      <ul class="list">
+        <li>Algoritma belanja — perancangan logika perhitungan belanja</li>
+        <li>Data siswa — pengelolaan data siswa dengan konsep CRUD</li>
+        <li>Desain Figma — pembuatan desain antarmuka aplikasi/website</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Copyright © 2026 M. Nabil Rahmadhan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

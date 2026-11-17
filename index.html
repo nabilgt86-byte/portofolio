@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Nabil Rahmadhan — Portofolio & CV</title>
+  <meta name="description" content="Portofolio dan CV pribadi M. Nabil Rahmadhan — Siswa Rekayasa Perangkat Lunak SMK Negeri 1 Kepanjen." />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Pasang tema SEBELUM CSS render supaya tidak kedip-kedip (default: dark)
+    try {
+      var __savedTheme = localStorage.getItem("tema-nabil");
+      document.documentElement.setAttribute("data-theme", __savedTheme === "light" ? "light" : "dark");
+    } catch (e) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGASI ===== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">M. Nabil <span>Rahmadhan</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="pengalaman.html">Pengalaman</a></li>
+        <li><a href="kemampuan.html">Kemampuan</a></li>
+        <li><a href="pendidikan.html">Pendidikan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION (2 KOLOM) ===== -->
+  <main>
+    <section class="hero container" id="home">
+      <!-- Kolom Kiri: Nama + Tombol -->
+      <div class="hero-text">
+        <p class="hero-badge">Siswa Rekayasa Perangkat Lunak</p>
+        <h1 class="hero-name">M. Nabil<br />Rahmadhan</h1>
+        <p class="hero-desc">
+          Halo! Saya siswa kelas XI SMK Program Keahlian Rekayasa Perangkat Lunak di
+          SMK Negeri 1 Kepanjen. Saya memiliki minat di bidang coding,
+          pengembangan website, dan database.
+        </p>
+        <div class="hero-buttons">
+          <!-- Toggle Light / Dark (default: Dark). Klik untuk ganti tema. -->
+          <button type="button" class="btn btn-theme" id="themeToggle" aria-label="Ganti mode gelap atau terang">
+            <span class="theme-icon" id="themeIcon" aria-hidden="true">🌙</span>
+            <span class="theme-text" id="themeText">Mode Dark</span>
+          </button>
+          <a href="CV_M_Nabil_Rahmadhan-3.docx" download class="btn btn-secondary">Download CV</a>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Foto Profil (klik untuk memperbesar) -->
+      <div class="hero-photo">
+        <button class="profile-img-wrap" id="profileImgWrap" aria-label="Perbesar foto profil">
+          <img src="Nabil wayne.jpeg" alt="Foto Profil M. Nabil Rahmadhan" class="profile-img" id="profileImg" />
+        </button>
+        <div class="photo-frame" aria-hidden="true"></div>
+        <p class="photo-hint">Klik foto untuk memperbesar</p>
+      </div>
+
+      <!-- Modal foto besar -->
+      <div class="photo-modal" id="photoModal" role="dialog" aria-modal="true" aria-label="Foto profil diperbesar">
+        <button class="photo-modal-close" id="photoModalClose" aria-label="Tutup foto">&times;</button>
+        <img src="Nabil wayne.jpeg" alt="Foto Profil M. Nabil Rahmadhan (diperbesar)" class="photo-modal-img" />
+      </div>
+    </section>
+
+    <!-- ===== KONTEN PORTOFOLIO & RINGKASAN CV ===== -->
+    <section class="content container" id="tentang">
+      <h2 class="section-title">Portofolio &amp; Ringkasan CV</h2>
+      <p class="section-subtitle">Klik salah satu kotak di bawah untuk melihat halaman detailnya.</p>
+
+      <div class="cards">
+        <!-- Profil Singkat -->
+        <a href="profil.html" class="card card-link">
+          <h3>Profil Singkat</h3>
+          <p>
+            Siswa kelas XI SMK Program Keahlian Rekayasa Perangkat Lunak di SMK Negeri 1 Kepanjen.
+            Memiliki minat di bidang coding, pengembangan website, dan database.
+          </p>
+          <span class="card-more">Lihat Detail →</span>
+        </a>
+
+        <!-- Pengalaman -->
+        <a href="pengalaman.html" class="card card-link">
+          <h3>Pengalaman</h3>
+          <p>Pembelajaran kejuruan (HTML, PHP, Laragon, CRUD) dan project di SMK Negeri 1 Kepanjen (Algoritma belanja, Data siswa, Desain Figma).</p>
+          <span class="card-more">Lihat Detail →</span>
+        </a>
+
+        <!-- Kemampuan & Karakter -->
+        <a href="kemampuan.html" class="card card-link">
+          <h3>Kemampuan &amp; Karakter</h3>
+          <p>Menyukai tantangan coding, teliti, disiplin, serta aktif di game kompetitif.</p>
+          <span class="card-more">Lihat Detail →</span>
+        </a>
+
+        <!-- Pendidikan -->
+        <a href="pendidikan.html" class="card card-link">
+          <h3>Pendidikan</h3>
+          <p><strong>SMK Negeri 1 Kepanjen</strong> — Rekayasa Perangkat Lunak.</p>
+          <span class="card-more">Lihat Detail →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Copyright © 2026 M. Nabil Rahmadhan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

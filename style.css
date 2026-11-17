@@ -1,0 +1,641 @@
+/* ============================================================
+   PORTFOLIO M. NABIL RAHMADHAN — Black & Silver, Modern Dark
+   ============================================================ */
+:root {
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+/* ===== MODE GELAP (DEFAULT) ===== */
+:root[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --bg: #0a0a0b;
+  --dark: #111114;
+  --dark-2: #17181c;
+  --silver: #c0c0c8;
+  --silver-light: #e6e6eb;
+  --silver-dark: #8a8a94;
+  --accent: #ffffff;
+  --border: rgba(192, 192, 200, 0.18);
+  --header-bg: rgba(10, 10, 11, 0.85);
+  --mobile-menu-bg: #111114;
+  --heading: #ffffff;
+  --name-grad-from: #ffffff;
+  --name-grad-to: #8a8a94;
+  --shadow: rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+/* ===== MODE TERANG ===== */
+:root[data-theme="light"] {
+  --bg: #f4f4f6;
+  --dark: #ffffff;
+  --dark-2: #ececef;
+  --silver: #3f3f46;
+  --silver-light: #17181c;
+  --silver-dark: #71717a;
+  --accent: #0a0a0b;
+  --border: rgba(10, 10, 11, 0.16);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --mobile-menu-bg: #ffffff;
+  --heading: #0a0a0b;
+  --name-grad-from: #0a0a0b;
+  --name-grad-to: #71717a;
+  --shadow: rgba(0, 0, 0, 0.14);
+  color-scheme: light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--silver-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition), color var(--transition);
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* ---------- NAVBAR ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--silver-light);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--silver-dark);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--silver);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--heading);
+}
+
+.nav-menu a.active {
+  color: var(--heading);
+  font-weight: 700;
+  border-bottom: 2px solid var(--silver-light);
+  padding-bottom: 2px;
+}
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background: var(--silver-light);
+  transition: var(--transition);
+}
+
+/* ---------- HERO (2 KOLOM: Flexbox) ---------- */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+
+/* Kiri: teks */
+.hero-text {
+  flex: 1.2;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--silver);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-name {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--name-grad-from), var(--name-grad-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 1.25rem;
+}
+
+.hero-desc {
+  color: var(--silver);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+/* Tombol berdampingan */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+}
+
+.btn-primary {
+  background: var(--silver-light);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--heading);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+/* Tombol ganti tema: Dark (abu/hitam) vs Light (putih/abu) */
+.btn-theme {
+  background: var(--silver-light);
+  color: var(--bg);
+  border: 1px solid var(--silver-light);
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-theme:hover {
+  background: var(--heading);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+/* Ikon bulan/matahari ikut ganti pas mode light */
+:root[data-theme="light"] .btn-theme {
+  background: #ffffff;
+  color: #0a0a0b;
+  border-color: rgba(10, 10, 11, 0.25);
+}
+
+/* Baris atas halaman detail: tombol kembali + toggle tema */
+.detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.detail-top .back-link {
+  margin-bottom: 0;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--silver-light);
+  border: 1px solid var(--silver-dark);
+}
+
+.btn-secondary:hover {
+  background: rgba(192, 192, 200, 0.1);
+  border-color: var(--silver-light);
+  transform: translateY(-2px);
+}
+
+/* Kanan: foto profil */
+.hero-photo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Bungkus foto: area klik yang bisa ditekan */
+.profile-img-wrap {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  background: var(--dark-2);
+  position: relative;
+  z-index: 1;
+  display: block;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Hover: foto sedikit membesar */
+.profile-img-wrap:hover .profile-img,
+.profile-img-wrap:focus-visible .profile-img {
+  transform: scale(1.07);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+.profile-img-wrap:focus-visible {
+  outline: 2px solid var(--silver-light);
+  outline-offset: 6px;
+}
+
+.photo-hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--silver-dark);
+  letter-spacing: 0.5px;
+}
+
+/* Modal foto besar */
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1.5rem;
+}
+
+.photo-modal.open {
+  display: flex;
+  animation: modalFade 0.3s ease;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.photo-modal-img {
+  max-width: min(560px, 88vw);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+  animation: modalZoom 0.35s ease;
+}
+
+@keyframes modalZoom {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: var(--dark-2);
+  color: var(--silver-light);
+  border: 1px solid var(--border);
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.photo-modal-close:hover {
+  background: var(--silver-dark);
+  transform: rotate(90deg);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Bingkai dekoratif di belakang foto */
+.photo-frame {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px dashed var(--silver-dark);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+
+/* ---------- KONTEN: PORTOFOLIO & RINGKASAN CV ---------- */
+.content {
+  padding: 2rem 0 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--silver-dark);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--silver);
+  margin-bottom: 2.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(160deg, var(--dark), var(--dark-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--silver-dark);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.card p {
+  color: var(--silver);
+  font-size: 0.95rem;
+}
+
+.card-subtitle {
+  margin-top: 0.75rem;
+  color: var(--silver-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.list {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+  color: var(--silver);
+  font-size: 0.95rem;
+}
+
+/* Kartu yang bisa diklik (berupa <a>) */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Hover kartu Profil: sedikit membesar */
+.card-link:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: var(--silver-dark);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* Klik kartu: membesar sesaat sebagai tanda masuk halaman */
+.card-link:active {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.card-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: transform var(--transition);
+}
+
+.card-link:hover .card-more {
+  transform: translateX(5px);
+}
+
+/* ---------- HALAMAN DETAIL ---------- */
+.detail {
+  flex: 1;
+  padding: 2.5rem 0 4rem;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--silver);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition);
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.detail-title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #ffffff, var(--silver-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.detail-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--silver-dark);
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+.detail-card {
+  background: linear-gradient(160deg, var(--dark), var(--dark-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-card h2 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.detail-card p {
+  color: var(--silver);
+  font-size: 0.98rem;
+  margin-bottom: 0.75rem;
+}
+
+.detail-card p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-card .list li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--silver-dark);
+  font-size: 0.9rem;
+}
+
+/* ---------- RESPONSIVE (HP) ---------- */
+@media (max-width: 768px) {
+  /* Navbar mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--dark);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 0.75rem 5%;
+  }
+
+  /* Hero jadi 1 kolom: foto di atas, teks di bawah */
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    padding: 2.5rem 0;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .profile-img {
+    width: 210px;
+    height: 210px;
+  }
+
+  .photo-frame {
+    width: 228px;
+    height: 228px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

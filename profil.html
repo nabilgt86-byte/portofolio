@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Singkat — M. Nabil Rahmadhan</title>
+  <meta name="description" content="Profil singkat M. Nabil Rahmadhan, siswa Rekayasa Perangkat Lunak di SMK Negeri 1 Kepanjen." />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Pasang tema SEBELUM CSS render supaya tidak kedip-kedip (default: dark)
+    try {
+      var __savedTheme = localStorage.getItem("tema-nabil");
+      document.documentElement.setAttribute("data-theme", __savedTheme === "light" ? "light" : "dark");
+    } catch (e) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGASI ===== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">M. Nabil <span>Rahmadhan</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html" class="active">Profil</a></li>
+        <li><a href="pengalaman.html">Pengalaman</a></li>
+        <li><a href="kemampuan.html">Kemampuan</a></li>
+        <li><a href="pendidikan.html">Pendidikan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== KONTEN DETAIL ===== -->
+  <main class="detail container">
+    <div class="detail-top">
+      <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+      <!-- Toggle Light / Dark (default: Dark). Klik untuk ganti tema. -->
+      <button type="button" class="btn btn-theme" id="themeToggle" aria-label="Ganti mode gelap atau terang">
+        <span class="theme-icon" id="themeIcon" aria-hidden="true">🌙</span>
+        <span class="theme-text" id="themeText">Mode Dark</span>
+      </button>
+    </div>
+
+    <h1 class="detail-title">Profil Singkat</h1>
+
+    <div class="detail-card">
+      <p>
+        Siswa kelas XI SMK Program Keahlian Rekayasa Perangkat Lunak di SMK Negeri 1 Kepanjen.
+        Memiliki minat di bidang coding, pengembangan website, dan database.
+      </p>
+      <p>
+        Saya tertarik pada dunia teknologi, terutama dalam membangun website dan mengolah data.
+        Di sekolah, saya mempelajari dasar-dasar pemrograman, pengelolaan database, dan pembuatan
+        aplikasi berbasis web untuk mendukung kegiatan pembelajaran kejuruan.
+      </p>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Copyright © 2026 M. Nabil Rahmadhan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
